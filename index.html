@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Morisco</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Almendra Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Almendra&display=swap" rel="stylesheet">
+
+  <style>
+    /* General body style */
+    body {
+      font-family: 'Almendra', Georgia, serif;
+      background: url('star_pattern.png') repeat; /* your background texture */
+      color: #f8f3c8; /* whitish yellow text */
+      text-shadow: 2px 2px 4px #e1dba6;
+      letter-spacing: 1px;
+    }
+
+    body, .navbar, h1, h2, h3, p, .nav-link, .navbar-brand {
+      font-family: 'Almendra', Georgia, serif;
+      text-shadow: 2px 2px 4px #f60d38;
+      letter-spacing: 1px;
+    }
+
+    /* Navbar with repeating texture */
+    .navbar {
+      height:103px;
+      background: url('main_menu_backGround.png') repeat;
+    }
+
+    /* Navbar links as texture buttons */
+    .navbar .nav-link {
+      display: inline-block;
+      width: 180px;
+      height: 80px;
+      background: url('button.png') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      line-height: 60px;
+      color: #fff7b2 !important;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: -23px;
+      margin-left: 20px;
+    }
+
+    /* Company label as a texture button */
+    .navbar-brand {
+      display: inline-block;
+      width: 234px;
+      height: 80px;
+      background: url('large_button.png') no-repeat center center;
+      background-size: cover;
+      text-align: center;
+      line-height: 70px;
+      color: #fff7b2 !important;
+      font-weight: bold;
+      text-decoration: none;
+      margin-top: -20px;
+    }
+
+    /* Hover effect for navbar links */
+    .navbar .nav-link:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      color: #fff7b2 !important;
+      text-decoration: none;
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      text-align: center;
+    }
+    .hero img.banner {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+    }
+    .hero-content img.logo {
+      max-width: 300px;
+      margin-bottom: 20px;
+    }
+    .hero-content h1, .hero-content p {
+      color: #fff7b2;
+      text-shadow: 1px 1px 2px #3b2c20;
+      font-weight: bold;
+    }
+
+    /* Section headings */
+    .games-section h2, .about-section h2, .contact-section h2 {
+      border-bottom: 2px solid #f8f3c8;
+      padding-bottom: 10px;
+      margin-bottom: 30px;
+      color: #fff7b2;
+    }
+
+    /* Fantasy button */
+    .btn-fantasy {
+      background: #a0522d;
+      border: none;
+      color: #fff;
+      font-weight: bold;
+      border-radius: 8px;
+    }
+    .btn-fantasy:hover {
+      background: #8b4513;
+    }
+
+    /* Screenshots */
+    .screenshot {
+      max-width: 275px;
+      border: 2px solid #f8f3c8;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    /* Bottom sections: vertical sidebars */
+    .about-section,
+    .games-section,
+    .contact-section {
+      position: relative;
+      padding-left: 80px; /* space for left sidebar */
+      padding-right: 80px; /* space for right sidebar */
+    }
+
+    .about-section::before,
+    .games-section::before,
+    .contact-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 60px; /* adjust width */
+      height: 100%;
+      background: url('horizontal_margin.png') repeat-y;
+      background-size: auto 100%;
+    }
+
+    .about-section::after,
+    .games-section::after,
+    .contact-section::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60px; /* adjust width */
+      height: 100%;
+      background: url('horizontal_margin.png') repeat-y;
+      background-size: auto 100%;
+    }
+
+    /* Horizontal decorative line at bottom of section */
+    .bottom-line {
+      display: block;
+      width: 100%;
+      height: 20px;
+      background: url('horizontal_line.png') no-repeat center center;
+      background-size: 100% 100%;
+      margin-top: 20px;
+    }
+.about-section::before,
+.games-section::before,
+.contact-section::before,
+.about-section::after,
+.games-section::after,
+.contact-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 60px; /* adjust width */
+  height: 200px; /* fixed height */
+  background: url('horizontal_margin.png') repeat-y;
+  background-size: auto; /* don’t stretch */
+}
+
+.about-section::before,
+.games-section::before,
+.contact-section::before {
+  left: 0;
+}
+
+.about-section::after,
+.games-section::after,
+.contact-section::after {
+  right: 0;
+}
+
+/* Left sidebar */
+.about-section::before,
+.games-section::before,
+.contact-section::before {
+  content: "";
+  position: fixed;   /* fixed so it stays at viewport left */
+  top: 0;
+  left: 0;           /* start from screen edge */
+  width: 120px;       /* adjust width */
+  height: 100vh;     /* full viewport height */
+  background: url('horizontal_margin.png') repeat-y;
+  background-size: auto;
+  z-index: -1;       /* behind all content */
+}
+
+/* Right sidebar */
+.about-section::after,
+.games-section::after,
+.contact-section::after {
+  content: "";
+  position: fixed;   /* fixed to viewport right */
+  top: 0;
+  right: 0;          /* start from screen edge */
+  width: 120px;
+  height: 100vh;
+  background: url('horizontal_margin.png') repeat-y;
+  background-size: auto;
+  z-index: -1;
+}
+
+/* Adjust container padding so content doesn't overlap the sidebars */
+.about-section > .container,
+.games-section > .container,
+.contact-section > .container {
+  padding-left: 70px;  /* slightly more than sidebar width */
+  padding-right: 70px;
+}
+
+
+/* Add padding to the content so it doesn't overlap the sidebars */
+.about-section > .container,
+.games-section > .container,
+.contact-section > .container {
+  padding-left: 70px;  /* slightly more than left sidebar width */
+  padding-right: 70px; /* slightly more than right sidebar width */
+}
+
+a {
+  color: black !important;   /* makes all links red */
+  text-decoration: none;   /* optional: removes underline */
+}
+
+a:hover {
+  color: darkred !important; /* hover effect */
+  text-decoration: underline; /* optional: underline on hover */
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">Morisco</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon" style="filter: invert(100%);"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#games">Our Games</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="DevelopperHeader.png" alt="Banner" class="banner">
+    <div class="hero-content">
+      <img src="smallMoriscoEmptyBack.png?text=Logo" alt="Company Logo" class="logo">
+      <h1>Morisco</h1>
+      <p>Morisco is an independent game studio dedicated to crafting original video games. Inspired by rich cultural tales and timeless legends.</p>
+    </div>
+  </section>
+
+  <!-- About Us -->
+  <section id="about" class="about-section container py-3">
+    <h2>About Us</h2>
+    <p>Morisco is an independent game studio dedicated to crafting original video games.
+We believe that games are more than entertainment, they are a way to tell stories, spark imagination, and connect players with worlds full of wonder.
+
+Our inspiration comes from rich cultural tales and timeless legends that have been passed down through generations. By reimagining these stories in an interactive form, we aim to preserve their magic while offering fresh and engaging gameplay.
+
+Passionate about history, fantasy, and video games, we strive to blend these themes into unique experiences that challenge the mind and inspire the heart. Our first game is designed to combine strategy, chance, and narrative depth, ensuring that players are not only entertained but also immersed in meaningful adventures.
+
+At Morisco, our mission is to create games that stand out for their originality, their storytelling, and their ability to transport players to new horizons where every choice shapes the journey, and every adventure leaves a lasting impression.</p>
+    <span class="bottom-line"></span>
+  </section>
+
+  <!-- Games -->
+  <section id="games" class="games-section container py-3">
+    <h2>Our Games</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Sinbad Stories: A Card Game</h3>
+        <p>Set sail on a rich narrative journey inspired by the legendary voyages of Sinbad the Sailor. Sinbad Stories is a solo, story-driven card game that blends thoughtful resource management with immersive storytelling. With every card you play, you steer the course of a grand adventure full of wonder, mystery, and peril.</p>
+	<p>In this beautifully illustrated solo experience, you travel across the seas from Baghdad to remote islands, ancient ruins, and mythical lands. Along the way, you'll encounter strange creatures, mysterious events, and story moments that unfold based on the cards you play.</p>
+        <a href="https://play.google.com/store/apps/details?id=your.game.package" target="_blank" class="btn btn-fantasy">Download on Play Store</a>
+      </div>
+      <div class="col-md-6">
+        <div class="ratio ratio-16x9">
+          <iframe src="https://www.youtube.com/embed/vHWs9J4jnXA" title="Game Trailer" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+    <div class="row mt-4">
+  <div class="col-md-3">
+    <img src="sc1.png" class="img-fluid screenshot" alt="Screenshot 1">
+  </div>
+  <div class="col-md-3">
+    <img src="sc5.png" class="img-fluid screenshot" alt="Screenshot 2">
+  </div>
+  <div class="col-md-3">
+    <img src="sc3.png" class="img-fluid screenshot" alt="Screenshot 3">
+  </div>
+  <div class="col-md-3">
+    <img src="sc4.png" class="img-fluid screenshot" alt="Screenshot 4">
+  </div>
+</div>
+
+    <span class="bottom-line"></span>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="contact-section container py-5">
+    <h2>Contact</h2>
+    <p>Got a question or want to collaborate? Reach out to us:</p>
+    <ul>
+      <li>Email: <a href="mailto:medbenzagouta@gmail.com">medbenzagouta@gmail.com</a></li>
+      <li>Facebook: <a href="https://www.facebook.com/profile.php?id=61581286072514">Morisco</a></li>
+    </ul>
+    <span class="bottom-line"></span>
+  </section>
+
+  <footer class="text-center py-3" style="background:#5c2e00; color:#f8e7c8;">
+    © 2025 Your Game Studio. All rights reserved.
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
