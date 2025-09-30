@@ -205,6 +205,25 @@
       .hero-content h1 { font-size: 1.8rem; }
       .hero-content p { font-size: 0.9rem; }
     }
+/* Hide horizontal margins on screens smaller than 992px */
+@media (max-width: 992px) {
+  .about-section::before,
+  .games-section::before,
+  .contact-section::before,
+  .about-section::after,
+  .games-section::after,
+  .contact-section::after {
+    display: none;
+  }
+
+  /* Also reduce section padding for smaller screens */
+  .about-section,
+  .games-section,
+  .contact-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
 
 p {
   background-color: rgba(0, 0, 0, 0.5	);   /* black panel behind text */
