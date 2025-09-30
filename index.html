@@ -16,14 +16,12 @@
     body {
       font-family: 'Almendra', Georgia, serif;
       background: url('star_pattern.png') repeat;
-      color: #f8f3c8;
+      color: #ffe0a9;
       text-shadow: 2px 2px 4px #e1dba6;
       letter-spacing: 1px;
+      font-size: 22px;
     }
 
-    body, h1, h2, h3, p, .nav-link, .navbar-brand {
-      text-shadow: 2px 2px 4px #f60d38;
-    }
 
     /* Navbar */
     .navbar {
@@ -33,15 +31,16 @@
     .navbar .nav-link {
       display: inline-block;
       width: auto; /* responsive */
-      min-width: 120px;
+      min-width: 170px;
       height: 80px;
       background: url('button.png') no-repeat center center;
       background-size: cover;
       text-align: center;
-      line-height: 60px;
+      line-height: 50px;
       color: #fff7b2 !important;
       font-weight: bold;
       margin-left: 10px;
+      margin-top: -15px;
     }
     .navbar-brand {
       width: 234px;
@@ -52,6 +51,7 @@
       line-height: 70px;
       color: #fff7b2 !important;
       font-weight: bold;
+      margin-top: -15px;
     }
 
     /* Hero Section */
@@ -78,17 +78,19 @@
 
     /* Section headings */
     .games-section h2, .about-section h2, .contact-section h2 {
-      border-bottom: 2px solid #f8f3c8;
-      padding-bottom: 10px;
-      margin-bottom: 30px;
-      color: #fff7b2;
-    }
+  border-bottom: 2px solid #f8f3c8;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  color: #f8f3c8;  /* whitish-yellow */
+  font-weight: bold; /* keep bold */
+  text-shadow: none; /* optional */
+}
 
     /* Fantasy button */
     .btn-fantasy {
       background: #a0522d;
       border: none;
-      color: #fff;
+      color: black;
       font-weight: bold;
       border-radius: 8px;
     }
@@ -143,7 +145,7 @@
     }
 
     /* Links styling */
-    a { color: red !important; text-decoration: none; }
+    a { color: blue !important; text-decoration: none; }
     a:hover { color: darkred !important; text-decoration: underline; }
 
     /* Responsive adjustments */
@@ -164,6 +166,14 @@
       .hero-content h1 { font-size: 1.8rem; }
       .hero-content p { font-size: 0.9rem; }
     }
+
+p {
+  background-color: rgba(0, 0, 0, 0.5	);   /* black panel behind text */
+  color: white;              /* text color for contrast */
+  padding: 15px;             /* space inside the panel */
+  border-radius: 8px;        /* optional rounded corners */
+}
+
 
   </style>
 </head>
@@ -210,8 +220,8 @@ We believe that games are more than entertainment, they are a way to tell storie
   <div class="row">
     <div class="col-lg-6 col-md-12 mb-3">
       <h3>Sinbad Stories: A Card Game</h3>
-      <p>Set sail on a rich narrative journey inspired by the legendary voyages of Sinbad the Sailor. Sinbad Stories is a solo, story-driven card game that blends thoughtful resource management with immersive storytelling. With every card you play, you steer the course of a grand adventure full of wonder, mystery, and peril.</p>
-	<p>In this beautifully illustrated solo experience, you travel across the seas from Baghdad to remote islands, ancient ruins, and mythical lands. Along the way, you'll encounter strange creatures, mysterious events, and story moments that unfold based on the cards you play.</p>
+      <p>Set sail on a rich narrative journey inspired by the legendary voyages of Sinbad the Sailor. Sinbad Stories is a solo, story-driven card game that blends thoughtful resource management with immersive storytelling. With every card you play, you steer the course of a grand adventure full of wonder, mystery, and peril.
+	In this beautifully illustrated solo experience, you travel across the seas from Baghdad to remote islands, ancient ruins, and mythical lands. Along the way, you'll encounter strange creatures, mysterious events, and story moments that unfold based on the cards you play.</p>
       <a href="https://play.google.com/store/apps/details?id=com.benz.sinbad" target="_blank" class="btn btn-fantasy">Download on Play Store</a>
     </div>
     <div class="col-lg-6 col-md-12 mb-3">
@@ -236,6 +246,12 @@ We believe that games are more than entertainment, they are a way to tell storie
       <img src="sc4.png" class="img-fluid screenshot" alt="Screenshot 4">
     </div>
   </div>
+<span class="bottom-line"></span>
+<div class="col-lg-6 col-md-12 mb-3">
+  <h3>Kingdom and Lands: ممالك و أمصار (In development)</h3>
+  <p>Kingdom and Lands" is an upcoming story-driven card game where players carefully build their own decks, crafting strategies to navigate a world rich in kingdoms, legends, and folklore. Players must make tactical decisions to expand their decks, overcome challenges, and participate in dynamic events that shape the fate of the realms. With a blend of strategy, chance, and narrative depth, the game invites players to immerse themselves in a living world where every choice matters, alliances can be forged or broken, and the stories of kingdoms unfold with each turn of the deck..</p>
+  <img src="kingdoms.png" alt="Kingdom and Lands Screenshot" class="img-fluid screenshot">
+</div>
 
   <span class="bottom-line"></span>
 </section>
@@ -253,11 +269,10 @@ We believe that games are more than entertainment, they are a way to tell storie
 
 <!-- Footer -->
 <footer class="text-center py-3" style="background:#5c2e00; color:#f8e7c8;">
-  © 2025 Your Game Studio. All rights reserved.
+  © 2025 Morisco. All rights reserved.
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
 
