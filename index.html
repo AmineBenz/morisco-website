@@ -55,26 +55,65 @@
     }
 
     /* Hero Section */
-    .hero {
-      position: relative;
-      text-align: center;
-    }
-    .hero img.banner {
-      display: block;
-      width: 100%;
-      height: auto;
-    }
-    .hero-content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      text-align: center;
-    }
-    .hero-content img.logo {
-      max-width: 300px;
-      margin-bottom: 20px;
-    }
+    /* Hero Section */
+.hero {
+  position: relative;
+  text-align: center;
+}
+.hero img.banner {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 150vh; /* limit height on small screens */
+  object-fit: cover;
+}
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 0 10px; /* prevent overflow on small screens */
+}
+.hero-content img.logo {
+  max-width: 30%;
+  height: auto;
+  margin-bottom: 0px;
+  margin-top: 40px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .about-section, .games-section, .contact-section {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .navbar .nav-link {
+    margin-left: 5px;
+    line-height: 50px;
+    font-size: 1rem;
+  }
+  .hero-content img.logo { max-width: 60%; }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p { font-size: 1rem; }
+  .about-section::before,
+  .games-section::before,
+  .contact-section::before,
+  .about-section::after,
+  .games-section::after,
+  .contact-section::after {
+    display: none; /* hide sidebars on smaller screens */
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar .nav-link { line-height: 40px; font-size: 0.85rem; }
+  .hero-content h1 { font-size: 1.5rem; }
+  .hero-content p { font-size: 0.85rem; }
+  .hero-content img.logo { max-width: 80%; }
+  body { font-size: 18px; }
+}
+
 
     /* Section headings */
     .games-section h2, .about-section h2, .contact-section h2 {
